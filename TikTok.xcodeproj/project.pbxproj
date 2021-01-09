@@ -22,7 +22,6 @@
 		A5912DA025A7C5AA0017AA71 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D9F25A7C5AA0017AA71 /* StorageManager.swift */; };
 		A5912DA325A7C5D50017AA71 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912DA225A7C5D50017AA71 /* AuthenticationManager.swift */; };
 		A5912DA625A7C5F60017AA71 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912DA525A7C5F60017AA71 /* HapticsManager.swift */; };
-		A5912DA925A7C60F0017AA71 /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912DA825A7C60F0017AA71 /* ExploreManager.swift */; };
 		A5C4EFFD25A8CB7B00CDD844 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5C4EFFC25A8CB7B00CDD844 /* GoogleService-Info.plist */; };
 		A5EC6C2825A7C08400B06B44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC6C2725A7C08400B06B44 /* AppDelegate.swift */; };
 		A5EC6C2A25A7C08400B06B44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC6C2925A7C08400B06B44 /* SceneDelegate.swift */; };
@@ -48,7 +47,6 @@
 		A5912D9F25A7C5AA0017AA71 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A5912DA225A7C5D50017AA71 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		A5912DA525A7C5F60017AA71 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
-		A5912DA825A7C60F0017AA71 /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
 		A5C4EFFC25A8CB7B00CDD844 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5EC6C2425A7C08400B06B44 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EC6C2725A7C08400B06B44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				A5912D9F25A7C5AA0017AA71 /* StorageManager.swift */,
 				A5912DA225A7C5D50017AA71 /* AuthenticationManager.swift */,
 				A5912DA525A7C5F60017AA71 /* HapticsManager.swift */,
-				A5912DA825A7C60F0017AA71 /* ExploreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -359,7 +356,6 @@
 				A5912D9225A7C4CE0017AA71 /* SignUpViewController.swift in Sources */,
 				A5912DA325A7C5D50017AA71 /* AuthenticationManager.swift in Sources */,
 				A5912D8725A7C44A0017AA71 /* TabBarViewController.swift in Sources */,
-				A5912DA925A7C60F0017AA71 /* ExploreManager.swift in Sources */,
 				A5912D7A25A7C4060017AA71 /* ExploreViewController.swift in Sources */,
 				A5912D9925A7C54C0017AA71 /* PostViewController.swift in Sources */,
 				A5912D7E25A7C4110017AA71 /* CameraViewController.swift in Sources */,
