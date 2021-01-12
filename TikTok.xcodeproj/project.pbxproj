@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06331CA857E293CB5904F26D /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35744EC4DB18F3A733F3B68 /* Pods_TikTok.framework */; };
+		A50FBBFB25ADE5C4003A8091 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBBFA25ADE5C4003A8091 /* CommentViewController.swift */; };
+		A50FBC2825ADFBE6003A8091 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2725ADFBE6003A8091 /* CommentModel.swift */; };
+		A50FBC2B25ADFC21003A8091 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2A25ADFC21003A8091 /* User.swift */; };
 		A5912D7A25A7C4060017AA71 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D7925A7C4060017AA71 /* ExploreViewController.swift */; };
 		A5912D7E25A7C4110017AA71 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D7D25A7C4110017AA71 /* CameraViewController.swift */; };
 		A5912D8125A7C4250017AA71 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D8025A7C4250017AA71 /* NotificationsViewController.swift */; };
@@ -35,6 +38,9 @@
 /* Begin PBXFileReference section */
 		8E2D7E68DA78296EB0BDACB6 /* Pods-TikTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.release.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.release.xcconfig"; sourceTree = "<group>"; };
 		A35744EC4DB18F3A733F3B68 /* Pods_TikTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50FBBFA25ADE5C4003A8091 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		A50FBC2725ADFBE6003A8091 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		A50FBC2A25ADFC21003A8091 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A5912D7925A7C4060017AA71 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		A5912D7D25A7C4110017AA71 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A5912D8025A7C4250017AA71 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				A5949D3E25ACA424004292BF /* PostModel.swift */,
+				A50FBC2725ADFBE6003A8091 /* CommentModel.swift */,
+				A50FBC2A25ADFC21003A8091 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 				A5912D8925A7C4940017AA71 /* UserListViewController.swift */,
 				A5912D9425A7C4E70017AA71 /* SettingsViewController.swift */,
 				A5912D9825A7C54C0017AA71 /* PostViewController.swift */,
+				A50FBBFA25ADE5C4003A8091 /* CommentViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -359,14 +368,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50FBBFB25ADE5C4003A8091 /* CommentViewController.swift in Sources */,
 				A5912D9225A7C4CE0017AA71 /* SignUpViewController.swift in Sources */,
 				A5912DA325A7C5D50017AA71 /* AuthenticationManager.swift in Sources */,
 				A5912D8725A7C44A0017AA71 /* TabBarViewController.swift in Sources */,
+				A50FBC2825ADFBE6003A8091 /* CommentModel.swift in Sources */,
 				A5912D7A25A7C4060017AA71 /* ExploreViewController.swift in Sources */,
 				A5912D9925A7C54C0017AA71 /* PostViewController.swift in Sources */,
 				A5949D3C25AC9245004292BF /* extensions.swift in Sources */,
 				A5912D7E25A7C4110017AA71 /* CameraViewController.swift in Sources */,
 				A5EC6C2C25A7C08400B06B44 /* HomeViewController.swift in Sources */,
+				A50FBC2B25ADFC21003A8091 /* User.swift in Sources */,
 				A5912D9D25A7C5A30017AA71 /* DatabaseManager.swift in Sources */,
 				A5912DA625A7C5F60017AA71 /* HapticsManager.swift in Sources */,
 				A5912D8125A7C4250017AA71 /* NotificationsViewController.swift in Sources */,

@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol PostViewControllerDelegate: AnyObject {
+    func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
+}
+
 class PostViewController: UIViewController {
     
+    weak var delegate: PostViewControllerDelegate?
     var model: PostModel
     
     private let likeButton: UIButton = {
@@ -58,7 +63,7 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let colors: [UIColor] = [
             .red, .green, .black, .orange, .blue, .systemPink
         ]
@@ -69,7 +74,7 @@ class PostViewController: UIViewController {
         setUpDoubleTapToLike()
         view.addSubview(captionLabel)
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -79,7 +84,7 @@ class PostViewController: UIViewController {
             button.frame = CGRect(x: view.width-size-10, y: yStart + (CGFloat(index) * 10) + (CGFloat(index) * size), width: size, height: size)
         }
         
-        captionLabel.sizeToFit() // auto update size
+        //        captionLabel.sizeToFit() // auto update size
         let labelSize = captionLabel.sizeThatFits(CGSize(width: view.width - size - 12, height: view.height))
         captionLabel.frame = CGRect(
             x: 5,
@@ -107,7 +112,10 @@ class PostViewController: UIViewController {
     }
     @objc private func didTapComment(){
         // Present the comment tray
+        delegate?.postViewController(self, didTapCommentButtonFor: model)
     }
+    
+    
     @objc private func didTapShare(){
         // Present share sheet (UIActivityView controller)
         
@@ -159,6 +167,6 @@ class PostViewController: UIViewController {
                 }
             }
         }
-
+        
     }
 }
