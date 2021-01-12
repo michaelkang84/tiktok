@@ -11,6 +11,7 @@
 		A50FBBFB25ADE5C4003A8091 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBBFA25ADE5C4003A8091 /* CommentViewController.swift */; };
 		A50FBC2825ADFBE6003A8091 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2725ADFBE6003A8091 /* CommentModel.swift */; };
 		A50FBC2B25ADFC21003A8091 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2A25ADFC21003A8091 /* User.swift */; };
+		A50FBC2E25AE0676003A8091 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2D25AE0676003A8091 /* CommentTableViewCell.swift */; };
 		A5912D7A25A7C4060017AA71 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D7925A7C4060017AA71 /* ExploreViewController.swift */; };
 		A5912D7E25A7C4110017AA71 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D7D25A7C4110017AA71 /* CameraViewController.swift */; };
 		A5912D8125A7C4250017AA71 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D8025A7C4250017AA71 /* NotificationsViewController.swift */; };
@@ -41,6 +42,7 @@
 		A50FBBFA25ADE5C4003A8091 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		A50FBC2725ADFBE6003A8091 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		A50FBC2A25ADFC21003A8091 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A50FBC2D25AE0676003A8091 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A5912D7925A7C4060017AA71 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		A5912D7D25A7C4110017AA71 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A5912D8025A7C4250017AA71 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		A5912D9725A7C5170017AA71 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				A50FBC2D25AE0676003A8091 /* CommentTableViewCell.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				A50FBBFB25ADE5C4003A8091 /* CommentViewController.swift in Sources */,
 				A5912D9225A7C4CE0017AA71 /* SignUpViewController.swift in Sources */,
 				A5912DA325A7C5D50017AA71 /* AuthenticationManager.swift in Sources */,
+				A50FBC2E25AE0676003A8091 /* CommentTableViewCell.swift in Sources */,
 				A5912D8725A7C44A0017AA71 /* TabBarViewController.swift in Sources */,
 				A50FBC2825ADFBE6003A8091 /* CommentModel.swift in Sources */,
 				A5912D7A25A7C4060017AA71 /* ExploreViewController.swift in Sources */,
