@@ -9,6 +9,7 @@ import UIKit
 
 protocol PostViewControllerDelegate: AnyObject {
     func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
+    func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel)
 }
 
 class PostViewController: UIViewController {
@@ -40,6 +41,15 @@ class PostViewController: UIViewController {
         return button
     }()
     
+    private let profileButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "test"), for: .normal)
+        button.tintColor = .white
+        button.layer.masksToBounds = true
+        button.imageView?.contentMode = .scaleAspectFill
+        return button
+    }()
+    
     private let captionLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -49,6 +59,7 @@ class PostViewController: UIViewController {
         label.textColor = .white
         return label
     }()
+
     
     // MARK: - Initializer
     
@@ -73,6 +84,8 @@ class PostViewController: UIViewController {
         setUpButtons()
         setUpDoubleTapToLike()
         view.addSubview(captionLabel)
+        view.addSubview(profileButton)
+        profileButton.addTarget(self, action: #selector(didTapProfileButton), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
@@ -93,6 +106,12 @@ class PostViewController: UIViewController {
             height: labelSize.height
         )
         
+        profileButton.frame = CGRect(
+            x: likeButton.left,
+            y: likeButton.top - 10 - size,
+            width: size,
+            height: size
+        )
     }
     
     func setUpButtons() {
@@ -113,6 +132,10 @@ class PostViewController: UIViewController {
     @objc private func didTapComment(){
         // Present the comment tray
         delegate?.postViewController(self, didTapCommentButtonFor: model)
+    }
+    
+    @objc private func didTapProfileButton() {
+        delegate?.postViewController(self, didTapProfileButtonFor: model)
     }
     
     

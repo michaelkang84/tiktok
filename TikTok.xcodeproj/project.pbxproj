@@ -60,6 +60,7 @@
 		A5949D3B25AC9245004292BF /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		A5949D3E25ACA424004292BF /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		A5C4EFFC25A8CB7B00CDD844 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5DA89FC25AE351200AD9E24 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		A5EC6C2425A7C08400B06B44 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EC6C2725A7C08400B06B44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5EC6C2925A7C08400B06B44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 			children = (
 				A5C4EFFC25A8CB7B00CDD844 /* GoogleService-Info.plist */,
 				A5EC6C3025A7C08500B06B44 /* Assets.xcassets */,
+				A5DA89FC25AE351200AD9E24 /* video.mp4 */,
 				A5EC6C2925A7C08400B06B44 /* SceneDelegate.swift */,
 				A5EC6C2725A7C08400B06B44 /* AppDelegate.swift */,
 				A5949D3B25AC9245004292BF /* extensions.swift */,
