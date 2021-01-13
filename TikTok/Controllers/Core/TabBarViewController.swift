@@ -20,11 +20,13 @@ class TabBarViewController: UITabBarController {
         let explore = ExploreViewController()
         let camera = CameraViewController()
         let notifications = NotificationsViewController()
-        let profile = ProfileViewController(user: User(
-                                                username: "sefl",
-                                                profilePictureUrl: nil,
-                                                identifier: "abc123")
+        let profile = ProfileViewController(
+            user: User(
+                username: "self",
+                profilePictureUrl: nil,
+                identifier: "abc123")
         )
+        
         
         explore.title = "Explore"
         notifications.title = "Notifications"

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol PostViewControllerDelegate: AnyObject {
     func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
@@ -59,6 +60,10 @@ class PostViewController: UIViewController {
         label.textColor = .white
         return label
     }()
+    
+    var player: AVPlayer?
+    private var playerDidFinishObserver: NSObjectProtocol?
+    
 
     
     // MARK: - Initializer
@@ -74,7 +79,7 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureVideo()
         let colors: [UIColor] = [
             .red, .green, .black, .orange, .blue, .systemPink
         ]
@@ -92,9 +97,15 @@ class PostViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         let size: CGFloat = 40
-        let yStart: CGFloat = view.height - (size * 4) - 30 - (tabBarController?.tabBar.height ?? 0)
+        let tabBarHeight: CGFloat = (tabBarController?.tabBar.height ?? 0)
+        let yStart: CGFloat = view.height - (size * 4.0) - 30 - view.safeAreaInsets.bottom - tabBarHeight
+        
         for (index, button) in [likeButton, commentButton, shareButton].enumerated() {
-            button.frame = CGRect(x: view.width-size-10, y: yStart + (CGFloat(index) * 10) + (CGFloat(index) * size), width: size, height: size)
+            button.frame = CGRect(
+                x: view.width-size-10,
+                y: yStart + (CGFloat(index) * 10) + (CGFloat(index) * size),
+                width: size, height: size
+            )
         }
         
         //        captionLabel.sizeToFit() // auto update size
@@ -112,6 +123,38 @@ class PostViewController: UIViewController {
             width: size,
             height: size
         )
+    }
+    
+    private func configureVideo() {
+        guard let path = Bundle.main.path(forResource: "video", ofType: "mp4") else {
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        player = AVPlayer(url: url)
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(playerLayer)
+        player?.volume = 0
+        player?.play()
+        
+        guard let player = player else {
+            return
+        }
+        
+        playerDidFinishObserver = NotificationCenter.default.addObserver(
+            forName: .AVPlayerItemDidPlayToEndTime,
+            object: player.currentItem,
+            queue: .main
+        ) { (_) in
+            
+            player.seek(to: .zero)
+            
+            player.play()
+            
+        }
     }
     
     func setUpButtons() {
