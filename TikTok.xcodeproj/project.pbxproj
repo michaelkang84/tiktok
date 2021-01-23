@@ -12,6 +12,7 @@
 		A50FBC2825ADFBE6003A8091 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2725ADFBE6003A8091 /* CommentModel.swift */; };
 		A50FBC2B25ADFC21003A8091 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2A25ADFC21003A8091 /* User.swift */; };
 		A50FBC2E25AE0676003A8091 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2D25AE0676003A8091 /* CommentTableViewCell.swift */; };
+		A5269E1D25BCA5CF0047C589 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5269E1C25BCA5CF0047C589 /* RecordButton.swift */; };
 		A5912D7A25A7C4060017AA71 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D7925A7C4060017AA71 /* ExploreViewController.swift */; };
 		A5912D7E25A7C4110017AA71 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D7D25A7C4110017AA71 /* CameraViewController.swift */; };
 		A5912D8125A7C4250017AA71 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D8025A7C4250017AA71 /* NotificationsViewController.swift */; };
@@ -59,6 +60,7 @@
 		A50FBC2725ADFBE6003A8091 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		A50FBC2A25ADFC21003A8091 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A50FBC2D25AE0676003A8091 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		A5269E1C25BCA5CF0047C589 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		A5912D7925A7C4060017AA71 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		A5912D7D25A7C4110017AA71 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A5912D8025A7C4250017AA71 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				A5A49CE325B09AA9006A9CA0 /* ExploreUserCollectionViewCell.swift */,
 				A5A49CEB25B09C96006A9CA0 /* ExploreHashtagCollectionViewCell.swift */,
 				A50FBC2D25AE0676003A8091 /* CommentTableViewCell.swift */,
+				A5269E1C25BCA5CF0047C589 /* RecordButton.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				A50FBC2B25ADFC21003A8091 /* User.swift in Sources */,
 				A5912D9D25A7C5A30017AA71 /* DatabaseManager.swift in Sources */,
 				A5912DA625A7C5F60017AA71 /* HapticsManager.swift in Sources */,
+				A5269E1D25BCA5CF0047C589 /* RecordButton.swift in Sources */,
 				A5912D8125A7C4250017AA71 /* NotificationsViewController.swift in Sources */,
 				A5912D8A25A7C4940017AA71 /* UserListViewController.swift in Sources */,
 				A5912D8425A7C42E0017AA71 /* ProfileViewController.swift in Sources */,
