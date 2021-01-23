@@ -5,6 +5,7 @@
 //  Created by Michael Kang on 1/7/21.
 //
 
+import FirebaseAuth
 import Firebase
 import UIKit
 
@@ -21,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         FirebaseApp.configure()
-        
+     
         return true
     }
 

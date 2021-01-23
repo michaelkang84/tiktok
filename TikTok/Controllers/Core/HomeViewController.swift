@@ -37,10 +37,10 @@ class HomeViewController: UIViewController {
         control.selectedSegmentTintColor = .white
         return control
     }()
+
     
     private var forYouPosts = PostModel.mockModel()
     private var followingPosts = PostModel.mockModel()
-    
     
     // MARK: - Lifecycle
     
@@ -48,13 +48,15 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(horizontalScrollView)
-        horizontalScrollView.contentOffset = CGPoint(x: view.width, y: 0)
         setUpFeed()
+        horizontalScrollView.contentInsetAdjustmentBehavior = .never
+        horizontalScrollView.contentOffset = CGPoint(x: view.width, y: 0)
+        
         horizontalScrollView.delegate = self
         setUpHeaderButtons()
         
     }
-    
+//
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         horizontalScrollView.frame = view.bounds
