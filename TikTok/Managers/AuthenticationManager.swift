@@ -42,7 +42,8 @@ final class AuthManager {
             DatabaseManager.shared.getUsername(for: email) { (username) in
                 if let username = username {
                     UserDefaults.standard.setValue(username, forKey: "username")
-                    print("got username: \(username)")
+                    guard let usernameInDefaults = UserDefaults.standard.string(forKey: "username") else {return}
+                    print("got username: \(usernameInDefaults)")
                 }
             }
             

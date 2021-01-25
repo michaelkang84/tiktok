@@ -13,6 +13,7 @@
 		A50FBC2B25ADFC21003A8091 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2A25ADFC21003A8091 /* User.swift */; };
 		A50FBC2E25AE0676003A8091 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50FBC2D25AE0676003A8091 /* CommentTableViewCell.swift */; };
 		A5269E1D25BCA5CF0047C589 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5269E1C25BCA5CF0047C589 /* RecordButton.swift */; };
+		A5269E2625BCC06E0047C589 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5269E2525BCC06E0047C589 /* CaptionViewController.swift */; };
 		A5912D7A25A7C4060017AA71 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D7925A7C4060017AA71 /* ExploreViewController.swift */; };
 		A5912D7E25A7C4110017AA71 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D7D25A7C4110017AA71 /* CameraViewController.swift */; };
 		A5912D8125A7C4250017AA71 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5912D8025A7C4250017AA71 /* NotificationsViewController.swift */; };
@@ -61,6 +62,7 @@
 		A50FBC2A25ADFC21003A8091 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A50FBC2D25AE0676003A8091 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A5269E1C25BCA5CF0047C589 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		A5269E2525BCC06E0047C589 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		A5912D7925A7C4060017AA71 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		A5912D7D25A7C4110017AA71 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A5912D8025A7C4250017AA71 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				A5912D8925A7C4940017AA71 /* UserListViewController.swift */,
 				A5912D9425A7C4E70017AA71 /* SettingsViewController.swift */,
 				A5912D9825A7C54C0017AA71 /* PostViewController.swift */,
+				A5269E2525BCC06E0047C589 /* CaptionViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				A5A49D1125B617A3006A9CA0 /* ExploreManager.swift in Sources */,
 				A5912D9925A7C54C0017AA71 /* PostViewController.swift in Sources */,
 				A5992AA525B7CEC100D394E5 /* AuthField.swift in Sources */,
+				A5269E2625BCC06E0047C589 /* CaptionViewController.swift in Sources */,
 				A5A49CBD25AF577D006A9CA0 /* ExplorePostViewModel.swift in Sources */,
 				A5949D3C25AC9245004292BF /* extensions.swift in Sources */,
 				A5912D7E25A7C4110017AA71 /* CameraViewController.swift in Sources */,

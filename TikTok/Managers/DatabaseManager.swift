@@ -56,9 +56,47 @@ final class DatabaseManager {
         }
     }
     
-    public func getAllUsers(completion: ([String]) -> Void) {
+    public func insertPost(filename: String, caption: String, completion: @escaping (Bool) -> Void) {
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return
+        }
         
+        database.child("users").child(username).observeSingleEvent(of: .value) { [weak self] (snapshot) in
+            guard var value = snapshot.value as? [String: Any] else {
+                completion(false)
+                return
+            }
+            
+            let newEntry = [
+                "name": filename,
+                "caption": caption
+            ]
+            
+            if var posts = value["posts"] as? [[String: Any]] {
+                posts.append(newEntry)
+                value["posts"] = posts
+                self?.database.child("users").child(username).setValue(value, withCompletionBlock: { (error, _) in
+                    guard error == nil else {
+                        completion(false)
+                        return
+                    }
+                    
+                    completion(true)
+                })
+            } else {
+                value["posts"] = [newEntry]
+                self?.database.child(username).setValue(value, withCompletionBlock: { (error, _) in
+                    guard error == nil else {
+                        completion(false)
+                        return
+                    }
+                    completion(true)
+                })
+            }
+            
+        }
     }
+    
     
     public func getUsername(for email: String, completion: @escaping (String?) -> Void) {
         database.child("users").observeSingleEvent(of: .value) { (snapshot) in

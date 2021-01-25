@@ -63,19 +63,34 @@ class CameraViewController: UIViewController {
         recordButton.frame = CGRect(x: (view.width - size)/2, y: view.height - view.safeAreaInsets.bottom - size - 5, width: size, height: size)
     }
     
-    @objc func didTapClose() {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         captureSession.stopRunning()
-        tabBarController?.tabBar.isHidden = false
-        tabBarController?.selectedIndex = 0
+    }
+    
+    @objc func didTapClose() {
+        recordButton.isHidden = false
+        navigationItem.rightBarButtonItem = nil
+        if previewLayer != nil {
+            previewLayer?.removeFromSuperlayer()
+            previewLayer = nil
+        } else {
+            captureSession.stopRunning()
+            tabBarController?.tabBar.isHidden = false
+            tabBarController?.selectedIndex = 0
+        }
+
     }
     
     @objc private func didTapRecord() {
         if  captureVideoOutput.isRecording {
+            print("camera is recording")
             // stop recording
             recordButton.toggle(for: .notRecording)
             captureVideoOutput.stopRecording()
             HapticsManager.shared.vibrateForSelection()
         } else {
+            print("camera is not recording")
             guard var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
                 return
             }
@@ -127,6 +142,7 @@ class CameraViewController: UIViewController {
     }
 }
 
+//MARK: av capture field out recording delegate
 extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         guard error == nil else {
@@ -135,6 +151,8 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
             present(alert, animated: true, completion: nil)
             return
         }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(didTapNext))
+        
         recordedVideoUrl = outputFileURL
         let player = AVPlayer(url: outputFileURL)
         previewLayer = AVPlayerLayer(player: player)
@@ -162,6 +180,20 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
         if let playerItem = notification.object as? AVPlayerItem {
             playerItem.seek(to: CMTime.zero, completionHandler: nil)
         }
+    }
+    
+    @objc func didTapNext()
+    {
+        print("did tap next button ")
+        guard let url = recordedVideoUrl else {
+            return
+        }
+        
+        HapticsManager.shared.vibrateForSelection()
+        
+        // push caption controller
+        let vc = CaptionViewController(videoUrl: url)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
