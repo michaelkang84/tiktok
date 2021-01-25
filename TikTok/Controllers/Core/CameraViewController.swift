@@ -2,7 +2,7 @@
 //  CameraViewController.swift
 //  TikTok
 //
-//  Created by Michael Kang on 1/7/21.
+//  Created by Afraz Siddiqui on 12/24/20.
 //
 
 import AVFoundation
@@ -53,6 +53,7 @@ class CameraViewController: UIViewController {
         print("camera view did appear")
         super.viewDidAppear(animated)
         tabBarController?.tabBar.isHidden = true
+        captureSession.startRunning()
     }
     
     override func viewDidLayoutSubviews() {
@@ -67,20 +68,7 @@ class CameraViewController: UIViewController {
         super.viewWillDisappear(animated)
         captureSession.stopRunning()
     }
-    
-    @objc func didTapClose() {
-        recordButton.isHidden = false
-        navigationItem.rightBarButtonItem = nil
-        if previewLayer != nil {
-            previewLayer?.removeFromSuperlayer()
-            previewLayer = nil
-        } else {
-            captureSession.stopRunning()
-            tabBarController?.tabBar.isHidden = false
-            tabBarController?.selectedIndex = 0
-        }
 
-    }
     
     @objc private func didTapRecord() {
         if  captureVideoOutput.isRecording {
@@ -138,9 +126,25 @@ class CameraViewController: UIViewController {
             cameraView.layer.addSublayer(previewLayer)
         }
         // enable camera start
-        captureSession.startRunning()
+        print("starting capture session")
+//        captureSession.startRunning()
+    }
+    
+    @objc func didTapClose() {
+        recordButton.isHidden = false
+        navigationItem.rightBarButtonItem = nil
+        if previewLayer != nil {
+            previewLayer?.removeFromSuperlayer()
+            previewLayer = nil
+        } else {
+            captureSession.stopRunning()
+            tabBarController?.tabBar.isHidden = false
+            tabBarController?.selectedIndex = 0
+        }
     }
 }
+
+
 
 //MARK: av capture field out recording delegate
 extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
@@ -189,10 +193,12 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
             return
         }
         
+        NotificationCenter.default.removeObserver(self)
+        
         HapticsManager.shared.vibrateForSelection()
         
         // push caption controller
-        let vc = CaptionViewController(videoUrl: url)
+        let vc = CaptionViewController(videoURL: url)
         navigationController?.pushViewController(vc, animated: true)
     }
     

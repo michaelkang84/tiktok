@@ -22,7 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         FirebaseApp.configure()
-     
+        
+//        do {
+//            try Auth.auth().signOut()
+//        } catch {
+//            print(error)
+//        }
+//        
         return true
     }
 

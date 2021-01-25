@@ -14,9 +14,6 @@ final class StorageManager {
     
     /// Storage bucket reference
     private let storage = Storage.storage().reference() // reference to storage in firebase
-    private init() {
-            
-    }
     
     // Public
 

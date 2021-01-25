@@ -73,6 +73,7 @@ final class DatabaseManager {
             ]
             
             if var posts = value["posts"] as? [[String: Any]] {
+                print("appending post to existing array")
                 posts.append(newEntry)
                 value["posts"] = posts
                 self?.database.child("users").child(username).setValue(value, withCompletionBlock: { (error, _) in
@@ -84,12 +85,14 @@ final class DatabaseManager {
                     completion(true)
                 })
             } else {
+                print("creating new array of posts for user")
                 value["posts"] = [newEntry]
-                self?.database.child(username).setValue(value, withCompletionBlock: { (error, _) in
+                self?.database.child("users").child(username).setValue(value, withCompletionBlock: { (error, _) in
                     guard error == nil else {
                         completion(false)
                         return
                     }
+                    
                     completion(true)
                 })
             }
@@ -106,7 +109,6 @@ final class DatabaseManager {
             }
             
             for (username, value) in users {
-                print("username: \(username)")
                 print("value: \(value)")
                 if value["email"] as? String == email {
                     completion(username)
