@@ -26,6 +26,7 @@ enum NotificationType {
 }
 
 class Notification {
+    var identifier = UUID().uuidString
     var isHidden = false
     let text: String
     let type: NotificationType

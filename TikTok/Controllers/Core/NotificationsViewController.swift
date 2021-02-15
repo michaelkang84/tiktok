@@ -152,14 +152,19 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
         let model = notifications[indexPath.row]
         model.isHidden = true
         
-        self.notifications = notifications.filter({
-            $0.isHidden == false
-        })
-        
-        //remove cell at the index path
-        tableView.beginUpdates()
-        tableView.deleteRows(at: [indexPath], with: .none)
-        tableView.endUpdates()
+        DatabaseManager.shared.markNotificationAsHidden(notificationID: model.identifier) { [weak self] (success) in
+            DispatchQueue.main.async {
+                if success {
+                    self?.notifications = self?.notifications.filter({ $0.isHidden == false }) ?? []
+                    //remove cell at the index path
+                    tableView.beginUpdates()
+                    tableView.deleteRows(at: [indexPath], with: .none)
+                    tableView.endUpdates()
+                } else {
+                    print("mark notification as hidden: Failre")
+                }
+            }
+        }
     }
     
 }

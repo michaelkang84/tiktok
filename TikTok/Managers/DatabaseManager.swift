@@ -99,11 +99,7 @@ final class DatabaseManager {
             
         }
     }
-    
-    public func markNotificationAsHidden(completion: @escaping ([Notification]) -> Void) {
-        completion(Notification.mockData())
-    }
-    
+ 
     
     public func getUsername(for email: String, completion: @escaping (String?) -> Void) {
         database.child("users").observeSingleEvent(of: .value) { (snapshot) in
@@ -124,6 +120,10 @@ final class DatabaseManager {
     
     public func getNotifications(completion: @escaping ([Notification]) -> Void) {
         completion(Notification.mockData())
+    }
+    
+    public func markNotificationAsHidden(notificationID: String, completion: @escaping (Bool) -> Void) {
+        completion(true)
     }
     
 }
