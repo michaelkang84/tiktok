@@ -18,6 +18,7 @@ class ExploreViewController: UIViewController {
         return bar
     }()
     
+    
     private var sections = [ExploreSection]()
      
     private var collectionView: UICollectionView?
@@ -87,9 +88,9 @@ class ExploreViewController: UIViewController {
     func setUpCollectionView(){
         let layout = UICollectionViewCompositionalLayout { (section, _) -> NSCollectionLayoutSection? in
             // return layout for every section
-            // with a different function
             return self.layout(for: section)
         }
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         

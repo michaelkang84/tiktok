@@ -18,6 +18,10 @@ class CameraViewController: UIViewController {
     var captureVideoOutput = AVCaptureMovieFileOutput()
     // capture preview
     var capturePreviewLayer: AVCaptureVideoPreviewLayer?
+    // player layer for preview of recorded video
+    private var previewLayer: AVPlayerLayer?
+    // player looper
+    var playerLooper: AVPlayerLooper?
     
 
     private let cameraView: UIView = {
@@ -28,7 +32,6 @@ class CameraViewController: UIViewController {
     }()
     
     private let recordButton = RecordButton()
-    private var previewLayer: AVPlayerLayer?
     var recordedVideoUrl: URL?
     
     // MARK: lifecycle
@@ -156,36 +159,34 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
             return
         }
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(didTapNext))
+
+        let asset = AVAsset(url: outputFileURL)
+        let item = AVPlayerItem(asset: asset)
         
-        recordedVideoUrl = outputFileURL
-        let player = AVPlayer(url: outputFileURL)
+        let player = AVQueuePlayer()
         previewLayer = AVPlayerLayer(player: player)
+        
         previewLayer?.videoGravity = .resizeAspectFill
         previewLayer?.frame = cameraView.bounds
+        
+        recordedVideoUrl = outputFileURL
         
         guard let previewLayer = previewLayer else {
             return
         }
         
         recordButton.isHidden = true
-        cameraView.layer.addSublayer(previewLayer)
-        previewLayer.player?.play()
         
-        player.actionAtItemEnd = .none
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(playerItemDidReachEnd(notification:)),
-                                               name: .AVPlayerItemDidPlayToEndTime,
-                                               object: player.currentItem)
+        // Create a new player looper with the queue player and template item
+        playerLooper = AVPlayerLooper(player: player, templateItem: item)
+        
+        cameraView.layer.addSublayer(previewLayer)
+        
+        player.play()
+        
         print("finished recording to url: \(outputFileURL.absoluteString )")
     }
-    
-    @objc func playerItemDidReachEnd(notification: Notification) {
-        if let playerItem = notification.object as? AVPlayerItem {
-            playerItem.seek(to: CMTime.zero, completionHandler: nil)
-        }
-    }
-    
+ 
     @objc func didTapNext()
     {
         print("did tap next button ")
